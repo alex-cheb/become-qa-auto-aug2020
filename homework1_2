@@ -1,0 +1,4 @@
+git checkout -b hometask1_2
+git push -u origin hometask1_2:ht1_2
+git branch -vv
+git push origin -d ht1_2
