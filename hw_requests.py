@@ -24,8 +24,8 @@ def print_post_response(entry, par = ""):
     print(response.text)
 
 
-print_get_response(sep.join((url, entry_points[0])), request_params)
+# print_get_response(sep.join((url, entry_points[0])), request_params)
 
-print_post_response(sep.join((url, entry_points[1])))
+# print_post_response(sep.join((url, entry_points[1])))
 
 print_get_response(sep.join((url, entry_points[2])))
