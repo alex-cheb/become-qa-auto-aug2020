@@ -1,0 +1,53 @@
+1. Move file from untracked to commit and the whole way back.
+
+echo "working area" >> hw_git2.txt # working directory
+git add hw_git2.txt # staging area
+git commit -m "added a hw_git2.txt" # repository
+git reset --soft HEAD~1 # staging area
+git restore --staged hw_git2.txt # working directory
+
+2. Create situation when you changes in working directory going to be overwritten by update. 
+And try to avoid the problem with `git stash` cmd
+
+git checkout master
+echo "Sth" >> hw_git2_2
+git add hw_git2_2
+git commit -m "Commit a file for the second task
+git checkout -b hw2
+echo "update from hw2" >> hw_git2_2
+git stash
+git checkout master
+echo "updated from master branch" >> hw_git2_2
+git commit -am "commit file hw_git2_2"
+git checkout hw2
+git stash apply
+
+3. Create annotated tag. Remove it
+
+echo "annotation tag task" >> hw_git2_3
+git add hw_git2_3
+git commit -m "created a file for the third task"
+git tag -a hw_git2_3 -m "added a tag hw_git2_3"
+git push origin hw_git2_3
+git push origin --delete hw_git2_3
+git tag -d hw_git2_3
+# Deleted tag 'hw_git2_3' (was dcce07b)
+
+4. Create a branch from initial commit of master branch
+
+git checkout master
+git log oneline
+git checkout -b hw2_4 8362869 commit sha
+
+5. Remove file from git repository only (eave it on system)
+
+it checkout -b hw2_5
+echo "Some stuff" >> hw_git2_5
+git add hw_git2_5
+git commit -m "Added file for the fifth task"
+git rm --cached hw_git2_5
+git status
+ls
+
+
+

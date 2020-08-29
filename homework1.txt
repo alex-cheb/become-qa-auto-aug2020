@@ -1,0 +1,24 @@
+1.  Create merge conflict and resolve it
+git checkout -b conflict_b
+echo "Lorem ipsum" >> conflict.txt
+git add conflict.txt
+git commit -m "Added a conflict.txt file"
+echo "new text" >> conflict.txt
+git commit -am "Updated conflict.txt"
+git checkout master
+echo "Added from master" >> conflict.txt
+git add conflict.txt
+git commit -m "Updated conflict.txt in master branch"
+git merge conflict_b
+# CONFLICT (add/add): Merge conflict in conflict.txt
+# Auto-merging conflict.txt
+# Automatic merge failed; fix conflicts and then commit the result.
+echo "resolving conflict" >> conflict.txt
+git add conflict.txt
+git commit -m "Made changes to resolve conflict"
+
+2. Create branch, push it to remote with different name, delete it from remote only
+git checkout -b hometask1_2
+git push -u origin hometask1_2:ht1_2
+git branch -vv
+git push origin -d ht1_2
