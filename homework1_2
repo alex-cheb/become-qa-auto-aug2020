@@ -1,3 +1,4 @@
+Create branch, push it to remote with different name, delete it from remote only
 git checkout -b hometask1_2
 git push -u origin hometask1_2:ht1_2
 git branch -vv

@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 Added from master
+=======
+Lorem ipsum
+new text
+>>>>>>> conflict_b
+resolving conflict
